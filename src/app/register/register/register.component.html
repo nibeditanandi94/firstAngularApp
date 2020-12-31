@@ -1,0 +1,93 @@
+<!-- <p>register works!</p> -->
+<!-- <button [routerLink]="'register'">Register</button> -->
+
+<!-- FirstName:<br>
+<input #firstName type="text" name="fname">
+<br>
+LastName:<br>
+<input type="text" name="lname">
+<br>
+Username:<br>
+<input type="text" name="username">
+<br>
+Password:<br>
+<input type="text" name="password">
+<br><br>
+<button (click)="backbtn()">Back</button> -->
+
+<form (ngSubmit)="onRegister(reg)" #reg="ngForm">
+    <div class="form-group">
+        <label for="fname">FirstName</label>
+        <input type="text"
+        id="text"
+        class="form-control"
+        ngModel
+        name="firstName"
+        required
+        #fname="ngModel">
+        <p *ngIf="!fname.valid && fname.touched">Please enter First Name</p>
+    </div>
+    <br>
+  
+  
+    <div class="form-group">
+        <label for="lname">LastName</label>
+        <input type="text"
+        id="text"
+        class="form-control"
+        ngModel
+        name="lastName"
+        required
+        #lname="ngModel">
+        <p *ngIf="!lname.valid && lname.touched">Please enter First Name</p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text"
+        id="text"
+        class="form-control"
+        ngModel
+        name="email"
+        required
+        email
+        #email="ngModel">
+        <p *ngIf="!email.valid && email.touched">Please enter a valid email</p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="Secret Questions">
+            <select id="questions" 
+            class="form-control"
+            name="questions"
+            [ngModel]="secret">
+                <option value="school">What was your first School Name?</option>
+                <option value="mother">What was your Mother's maiden Name?</option>
+            </select>
+        </label>
+    </div>
+    <br>
+    <div class="form-group">
+        <textarea
+        id="answer"
+        class="form-control"
+        name="secretans"
+        [(ngModel)]="answer"
+        ></textarea>
+    </div>
+    <p>your answer is {{answer}}</p>
+    <br>
+    <div class="radio" *ngFor="let gender of genders">
+     <label>
+         <input type="radio"
+         name="gender"
+         ngModel
+         [value]="gender">
+         {{gender}}
+     </label>
+    </div>
+    <button type="submit" [disabled]=!reg.valid>Register</button>
+    <br><br>
+    <br><br>
+    <button (click)="backbtn()">Back</button>
+</form>

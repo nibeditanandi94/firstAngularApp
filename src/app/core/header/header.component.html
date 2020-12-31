@@ -1,0 +1,9 @@
+<p>header works!</p>
+<button (click)="loadLoginComponent()" [routerLink]="'login'">Login</button>
+<div [hidden]="hide">
+<app-login></app-login>
+</div>
+<button (click)="loadRegister()" [routerLink]="'register'">Register</button>
+<div [hidden]="hide">
+<app-register></app-register>
+</div>
