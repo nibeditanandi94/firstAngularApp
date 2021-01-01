@@ -7,9 +7,13 @@
             class="form-control"
             formControlName="username">
             <p *ngIf="!loginReactiveForm.get('userData.username').valid  && loginReactiveForm.get('userData.username').touched">
-                Please enter valid username
+               Please enter valid username 
             </p>
-        </div>
+    
+            <!-- <span *ngIf="loginReactiveForm.get('userData.username').errors['nameisforbidden']">
+                This name is invalid!
+            </span> -->
+   </div>
         <br><br>
         <div class="form-group">
             <label for="email">email</label>
