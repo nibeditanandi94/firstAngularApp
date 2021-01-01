@@ -26,4 +26,8 @@ export class HeaderComponent implements OnInit {
     loadRegister(){
       this.hide= true;
     }
+
+    loadReactive(){
+      this.hide= true;
+    }
 }

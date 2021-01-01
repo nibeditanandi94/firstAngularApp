@@ -1,0 +1,52 @@
+<form [formGroup]="loginReactiveForm" (ngSubmit)="submit()">
+    <div formGroupName="userData">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text"
+            id="username"
+            class="form-control"
+            formControlName="username">
+            <p *ngIf="!loginReactiveForm.get('userData.username').valid  && loginReactiveForm.get('userData.username').touched">
+                Please enter valid username
+            </p>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input 
+            type="text"
+            id="email"
+            class="form-control"
+            formControlName="email"
+            >
+            <p *ngIf="!loginReactiveForm.get('userData.email').valid  && loginReactiveForm.get('userData.email').touched">
+                Please enter valid username
+            </p>
+            </div>
+    </div>
+
+
+
+<br><br>
+<div class="radio" *ngFor="let gender of genders">
+<label>
+    <input type="radio"
+    [value]="gender"
+    formControlName="gender">{{gender}}
+</label>
+</div>
+<br><br>
+<div formArrayName="medicines">
+<button (click)="onAddMedicine()">Add Medicines</button>
+<br><br>
+<div 
+class="form-group"
+*ngFor="let medicine of getControls(); let i=index">
+<input type="text"
+class="form-control"
+[formControlName]="i">
+</div>
+</div>
+<button type="submit">Submit</button><br><br>
+<button type="button" (click)="backbtn()">Back</button>
+</form>

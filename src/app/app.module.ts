@@ -8,6 +8,8 @@ import { CoreModule } from './core/core.module';
 // import { RegisterComponent } from './register/register/register.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
+// import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveModule } from './reactive/reactive.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { RegisterModule } from './register/register.module';
     // LoginModule,
     // RegisterModule,
     AppRoutingModule,
+    // ReactiveModule,
+    // ReactiveFormsModule
     
 ],
   providers: [],
