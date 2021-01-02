@@ -8,10 +8,11 @@ import { LoginModule } from '../login/login.module';
 import { RegisterModule } from '../register/register.module';
 import { ReactiveModule } from '../reactive/reactive.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from '../home/home/home.component';
 
 
 @NgModule({
-  declarations: [CoreComponent, HeaderComponent],
+  declarations: [CoreComponent, HeaderComponent,HomeComponent],
   imports: [
     CommonModule,
     CoreRoutingModule,

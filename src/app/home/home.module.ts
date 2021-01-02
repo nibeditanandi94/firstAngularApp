@@ -3,14 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
+import {HttpClientModule} from '@angular/common/http';
+import { medicineService } from '../medicine.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
-  declarations: [HomeComponent,UserComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
-  ],exports:[HomeComponent,UserComponent]
+    BrowserModule,
+    HomeRoutingModule,
+    HttpClientModule
+  ],exports:[HomeComponent],
+  providers:[medicineService]
 })
 export class HomeModule { }

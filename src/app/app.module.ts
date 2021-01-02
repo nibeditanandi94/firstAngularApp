@@ -8,6 +8,8 @@ import { CoreModule } from './core/core.module';
 // import { RegisterComponent } from './register/register/register.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { ReactiveModule } from './reactive/reactive.module';
 
@@ -17,13 +19,15 @@ import { RegisterModule } from './register/register.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     CoreModule,
     // LoginModule,
     // RegisterModule,
     AppRoutingModule,
     // ReactiveModule,
-    // ReactiveFormsModule
-    
+    // ReactiveFormsModule,
+    HttpClientModule
+  
 ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Observable, Observer, Subscription } from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -37,7 +38,26 @@ if(count===9){
 count++;
 },1000)
 });
-this.firstCustomObservale=customIntervalObservale.subscribe((data:Number) => {
+
+//now it is outside of the subscribe function, if we want to modify data in the main method 
+//we should call it at line 48
+customIntervalObservale.pipe(map((data:number) => {
+return "modified data" +(data+1);
+}));
+
+// this.firstCustomObservale=customIntervalObservale.pipe(map((data:number) => {
+//   return "modified data" + (data+1);
+//   })).subscribe((data:number) => {
+//   console.log("Next Number" + data);
+//   },
+//   error => {
+//   console.log(error);
+//   },
+//   () => {
+//     console.log("completed");
+//   })
+
+this.firstCustomObservale=customIntervalObservale.subscribe((data:number) => {
 console.log("Next Number" +data);
 },
 error => {
