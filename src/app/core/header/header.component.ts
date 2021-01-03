@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Observable, Observer, Subscription } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { HomeService } from 'src/app/home/home/home.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,22 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit,OnDestroy {
+showParam:boolean=false;
+  
   //  loginLoaded:Boolean=false;
   public hide = true;
 private firstCustomObservale:Subscription;
 
-  constructor() { }
+  constructor(private homeser:HomeService) { }
   ngOnDestroy(): void {
     this.firstCustomObservale.unsubscribe();
   }
 
   ngOnInit(): void {
+
+    this.homeser.showActivated.subscribe((data) => {
+this.showParam=data;
+    });
 //creating custom observable
 const customIntervalObservale=Observable.create((observer:Observer<Number>) => {
   let count=0;
