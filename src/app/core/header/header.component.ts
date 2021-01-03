@@ -9,6 +9,8 @@ import { HomeService } from 'src/app/home/home/home.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit,OnDestroy {
+
+
 showParam:boolean=false;
   
   //  loginLoaded:Boolean=false;
@@ -90,4 +92,6 @@ console.log(error);
     loadReactive(){
       this.hide= true;
     }
+
+   
 }
