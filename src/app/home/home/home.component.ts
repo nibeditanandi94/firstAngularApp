@@ -22,4 +22,14 @@ export class HomeComponent implements OnInit {
  this.homeser.showActivated.next(true);
   }
 
+  public parentData:string="";
+ 
+  sendData(){
+    this.parentData="Sending data from parent to child";
+  }
+ childData:string="";
+  GetChildData(Childvalue:string){
+  this.childData=Childvalue;
+  console.log(Childvalue)
+  }
 }

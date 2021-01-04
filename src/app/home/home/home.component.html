@@ -5,3 +5,8 @@
 </div>
 <br>
 <button (click)="onShow()">Show</button>
+
+<br><br>
+<h5>Component Interaction</h5>
+<button (click)="sendData()">Parent Data to Child</button>
+<home-child [ReceivefromParent]="parentData" (OutputfromChild)="GetChildData($event)"></home-child>

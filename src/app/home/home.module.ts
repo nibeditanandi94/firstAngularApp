@@ -6,16 +6,17 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { medicineService } from '../medicine.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { HomeChildComponent } from './home/home-child.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent,HomeChildComponent],
   imports: [
     CommonModule,
     BrowserModule,
     HomeRoutingModule,
     HttpClientModule
-  ],exports:[HomeComponent],
+  ],exports:[HomeComponent,HomeChildComponent],
   providers:[medicineService]
 })
 export class HomeModule { }

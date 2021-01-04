@@ -9,17 +9,18 @@ import { RegisterModule } from '../register/register.module';
 import { ReactiveModule } from '../reactive/reactive.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../home/home/home.component';
+import { HomeChildComponent } from '../home/home/home-child.component';
 
 
 @NgModule({
-  declarations: [CoreComponent, HeaderComponent,HomeComponent],
+  declarations: [CoreComponent, HeaderComponent,HomeComponent,HomeChildComponent],
   imports: [
     CommonModule,
     CoreRoutingModule,
     LoginModule,
     RegisterModule,
     ReactiveModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     
   ],
   exports:[CoreComponent]

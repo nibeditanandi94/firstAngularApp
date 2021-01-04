@@ -1,4 +1,4 @@
-import { AfterViewInit, Component,Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component,Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {NgForm} from '@angular/forms';
 
@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit{
   }
   submit=false;
   constructor(private router:Router) { }
+  
 
   ngOnInit(): void {
   }
@@ -44,5 +45,6 @@ export class LoginComponent implements OnInit{
       username:suggestUsername
     });
   }
-  
+
+ 
 }
